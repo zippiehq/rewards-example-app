@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
                             if (response == null) {
                                 sb.append("\ninstallReferrerDetails == NULL");
                             } else {
+                                // This is where you would contact your backend api
                                 // Eg. If link is https://play.google.com/store/apps/details?id=org.appname&referrer=MY_REFERRAL_CODE,
                                 // response.getInstallReferrer() will be MY_REFERRAL_CODE
                                 // Note: These values will only work if app is released to Production in Google Play Store
