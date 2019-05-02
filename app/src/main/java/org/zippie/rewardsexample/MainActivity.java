@@ -26,6 +26,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView balanceTextView;
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     //TODO: Read these from somewhere
     final String tokenAddress = "0x374FaBa19192a123Fbb0c3990e3EeDcFeeaad42A";
     final String userId = "F07E51B3E0FF2492364B35382E697D73";
-    final String apiKey = "apiKey";
+    final String apiKey = "user";
     String url = "https://rewardapi-kovan.zippie.org/get_user_balance";
     Context context;
 
@@ -52,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         try {
             postParams.put("userid", userId);
             postParams.put("token_address", tokenAddress);
-            postParams.put("api-key", apiKey);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -97,7 +99,15 @@ public class MainActivity extends AppCompatActivity {
                             log(error.getMessage());
                         }
                     }
-                });
+                }
+        ){
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> params = new HashMap<>();
+                params.put("api-key", apiKey);
+                return params;
+            }
+        };
 
         queue.add(request);
 
