@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
                                         String wallets = response.getString("wallets");
                                         String cheques = response.getString("cheques");
 
-                                        // Construct url like https://customer.zippie.org/#/userid/pending/wallets/cheques
-                                        String url = "https://customer.zippie.org/#/" + userId + "/" + pending + "/" + wallets + "/" + cheques;
+                                        // Construct url like https://customer-test.zippierewards.com/#/userid/tokenAddress
+                                        String url = "https://customer-test.zippierewards.com/#/" + userId + "/" + tokenAddress;
                                         CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
                                         builder.setToolbarColor(ContextCompat.getColor(context, R.color.colorPrimary));
                                         CustomTabsIntent customTabsIntent = builder.build();
