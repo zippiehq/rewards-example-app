@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     final String tokenAddress = "0x374FaBa19192a123Fbb0c3990e3EeDcFeeaad42A";
     final String userId = "F07E51B3E0FF2492364B35382E697D73";
     final String apiKey = "user";
-    String url = "https://rewardapi-kovan.zippie.org/get_user_balance";
+    String url = "https://goerli-rewardapi.zippie.org/get_user_balance";
     Context context;
 
     @Override
